@@ -11,14 +11,6 @@ int char_to_int(char c);
 
 char** matrizObstaculos(int,int,int);//FUNCION EJERCICIO 2
 
-
-/*//48 al 57
-	int a;
-	char c = '0';
-	a = c;
-	cout<<a<<endl;
-	*/
-
 int main(int argc, char** argv) {
 	int opcion=0;
 	int a = 0;
@@ -30,7 +22,7 @@ int main(int argc, char** argv) {
 				cin>>size;
 				char* array = new char[size];
 				for(int i=0; i<size; i++){
-					cout<<(i+1)<<". Ingrese digito, luego letra 'U,D,L,R': ";
+					cout<<(i+1)<<". Ingrese digito, luego letra 'U,D,L,R' (caracter por caracter): ";
 					cin>>c;
 					array[i]=c;
 				}
@@ -130,10 +122,11 @@ char* descomprimir(char* array, int size){//funcion del ejercicio 1
 		}
 	}
 	
+	cout<<"\nLa secuencia es: "<<endl;
 	for(int i=0; i<acum;i++){
 		cout<<arreglo[i]<<" ";
 	}
-	cout<<endl;
+	cout<<endl<<endl;
 	
 	return arreglo;
 	//delete[] arreglo;
