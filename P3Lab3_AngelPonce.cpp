@@ -11,6 +11,10 @@ int char_to_int(char c);
 
 char** matrizObstaculos(int,int,int);//FUNCION EJERCICIO 2
 
+void laberinto(char* array, char** matriz, int x, int y, int n, int m);//FUNCION EJERCICIO 3
+
+int acum=0;//variable global, para ejercicio 1 y 3
+
 int main(int argc, char** argv) {
 	int opcion=0;
 	int a = 0;
@@ -48,7 +52,38 @@ int main(int argc, char** argv) {
 				break;
 			}	
 			case 3:{
+				acum=0;
+				int fila=0, columna=0;
+				cout<<"\nEJERCICIO 3"<<endl;
+				//Case 1:
+				int size = 0; char c;
+				cout<<"Ingrese el size de la cadena: ";
+				cin>>size;
+				char* array = new char[size];
+				for(int i=0; i<size; i++){
+					cout<<(i+1)<<". Ingrese digito, luego letra 'U,D,L,R' (caracter por caracter): ";
+					cin>>c;
+					array[i]=c;
+				}
+				//char* arreglo = descomprimir(array,size);
+				//fin case 1
 				
+				//Case 2:
+				int n=0,m=0,k=0;
+				cout<<"Ingrese un N (filas): ";
+				cin>>n;
+				cout<<"Ingrese un M (columnas): ";
+				cin>>m;
+				cout<<"Ingrese un k (cantidad de obstaculos): ";
+				cin>>k;
+				//char** matriz = matrizObstaculos(n,m,k);
+				//fin case 2
+				
+				cout<<"Ingrese la posicion inicial, fila: ";
+				cin>>fila;
+				cout<<"Columna: ";
+				cin>>columna;
+				laberinto(descomprimir(array, size),matrizObstaculos(n,m,k),fila,columna,n,m);
 				break;
 			}	
 			case 4:{
@@ -81,7 +116,7 @@ int menu(){//funcion menu
 
 char* descomprimir(char* array, int size){//funcion del ejercicio 1
 
-	int acum=0;
+	//int acum=0;
 
 	string cadena="";
 	for(int i=0; i<size; i++){//primero hay que obtener el size del nuevo array
@@ -173,6 +208,34 @@ char** matrizObstaculos(int n,int m,int k){//funcion del ejercicio 2
 	return matriz;
 }//fin de la funcion ejercicio 2
 
+void laberinto(char* array, char** matriz, int x, int y, int n, int m){
+	char c;
+	/*cout<<"Estas en el metodo laberinto: "<<endl;
+	for(int i=0; i<sizeof(array); i++){
+		cout<<array[i]<<" ";
+    }
+    cout<<endl;*/
+	for(int i=0; i<acum; i++){
+		//cout<<"hola"<<endl;
+		switch(array[i]){
+			case 'U':
+			case 'u':
+				c = 186;
+				matriz[x][y]=c;
+				x++;
+				break;	
+		}
+		for(int ii; ii<n; ii++){
+			for(int jj=0; jj<m; jj++){
+				cout<<matriz[ii][jj]<<" ";
+			}
+			cout<<endl;
+		}
+		//system("pause");
+		//system("cls");
+		
+	}
+}
 
 
 int char_to_int(char c){
