@@ -217,7 +217,7 @@ void laberinto(char* array, char** matriz, int x, int y, int n, int m){
     cout<<endl;*/
 	for(int i=0; i<acum; i++){
 		//cout<<"hola"<<endl;
-		switch(array[i]){
+		/*switch(array[i]){
 			case 'U':
 			case 'u':
 				c = 186;
@@ -234,6 +234,7 @@ void laberinto(char* array, char** matriz, int x, int y, int n, int m){
 		//system("pause");
 		//system("cls");
 		
+		*/
 	}
 }
 
